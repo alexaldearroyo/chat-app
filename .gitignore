@@ -1,0 +1,29 @@
+# Node modules (cliente y servidor)
+client/node_modules
+server/node_modules
+
+# Build outputs
+client/dist
+server/dist
+
+# Vite cache
+client/.vite
+client/.svelte-kit
+
+# TypeScript
+client/.svelte-kit
+
+
+# Logs
+*.log
+npm-debug.log*
+
+# Env files
+*.env
+
+# OS-specific
+.DS_Store
+
+# Summary files
+**/cs_*.txt
+.aider*
