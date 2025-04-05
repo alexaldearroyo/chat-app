@@ -10,6 +10,7 @@ const createMockSocket = () => {
     data: {},
     on: vi.fn((event, handler) => {
       onMap[event] = handler;
+      return socket as Socket;
     }),
     join: vi.fn(),
   };
