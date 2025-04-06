@@ -1,5 +1,5 @@
 import { Server, Socket } from 'socket.io';
-import { ChatMessage, Group, JoinPayload } from '../types';
+import { ChatMessage, Group, JoinPayload } from '../../shared/types';
 
 // TODO: Move group storage to a persistent database in production
 
