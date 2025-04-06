@@ -1,8 +1,8 @@
 import { Server, Socket } from 'socket.io';
 import { ChatMessage, Group, JoinPayload } from '../types';
 
-// In-memory store for groups (in production we would use a database)
-// Make sure this is defined at module level to be shared across all connections
+// TODO: Move group storage to a persistent database in production
+
 const groups: Group[] = [];
 
 export function registerChatHandlers(io: Server, socket: Socket) {
@@ -24,6 +24,7 @@ export function registerChatHandlers(io: Server, socket: Socket) {
 
   // When client creates a new group
   socket.on('createGroup', ({ name, username }: { name: string, username: string }) => {
+    // TODO: Prevent duplicate group names
     console.log(`Client ${socket.id} (${username}) is creating group: ${name}`);
 
     const newGroup: Group = {
@@ -34,6 +35,7 @@ export function registerChatHandlers(io: Server, socket: Socket) {
     };
 
     groups.push(newGroup);
+    // TODO: Save newly created group to database
     console.log(`Group created: ${newGroup.id}. Total groups: ${groups.length}`);
     console.log("Updated groups array:", JSON.stringify(groups, null, 2));
 
@@ -58,6 +60,7 @@ export function registerChatHandlers(io: Server, socket: Socket) {
 
   // When client joins a group
   socket.on('join', (payload: JoinPayload) => {
+    // TODO: Check for duplicate usernames in the same group
     socket.join(payload.group);
     socket.data.group = payload.group;
     socket.data.username = payload.username;
@@ -66,6 +69,7 @@ export function registerChatHandlers(io: Server, socket: Socket) {
 
   // When client sends a message
   socket.on('message', (msg: ChatMessage) => {
+     // TODO: Store messages in history per group
     const group = socket.data.group;
     if (!group || msg.content.length > 200) {
       return; // Invalid state or too long
@@ -77,5 +81,5 @@ export function registerChatHandlers(io: Server, socket: Socket) {
     });
   });
 
-  // TODO: handle disconnect, name conflict, history, etc.
+  // TODO: Implement group deletion feature (requires auth + DB check)
 }

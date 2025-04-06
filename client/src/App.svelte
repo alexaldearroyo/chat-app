@@ -51,6 +51,7 @@
     socket.on('message', (msg: ChatMessage) => {
       messages = [...messages, msg];
     });
+    // TODO: Request message history when joining a group
 
     socket.on('groupsList', (groups: Group[]) => {
       console.log("Received groups update:", groups);
@@ -119,6 +120,7 @@
                     <span class="group-name">{g.name}</span>
                     <span class="group-creator">Created by: {g.createdBy}</span>
                   </button>
+                  <!-- TODO: Add button to delete group (only for creator) -->
                 {/each}
               </div>
             {/if}
@@ -150,16 +152,19 @@
   <div class="user-info-row">
     <h3 class="username-label">Your username: {username}</h3>
     <h3 class="username-label">Group: {groupName || availableGroups.find(g => g.id === group)?.name}</h3>
+    <!-- TODO: Show list of connected users in the group -->
   </div>
 
   <div class="chat-box">
     {#each messages as msg}
       <div class="message">
         <strong>{msg.username}:</strong> {msg.content}
+        <!-- TODO: Display message timestamp -->
       </div>
     {/each}
   </div>
   <input class="message-input" bind:value={message} placeholder="Your message" maxlength="200" />
   <button on:click={sendMessage}>Send</button>
+  <!-- TODO: Add button to leave group -->
 </div>
 {/if}

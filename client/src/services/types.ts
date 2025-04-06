@@ -1,5 +1,5 @@
 // TODO: These types are duplicated from server/types/index.ts
-// In production, consider moving them to a shared/types/ folder.
+// TODO: Move shared types to a common shared/types/ directory
 
 export interface JoinPayload {
   username: string;

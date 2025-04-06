@@ -20,6 +20,8 @@ io.on('connection', (socket) => {
   console.log(`Total clients connected: ${io.sockets.sockets.size}`);
 
   socket.on('disconnect', () => {
+    // TODO: Clean up user session or notify group members (optional enhancement)
+    // TODO: Implement disconnect on the frontend
     console.log('Client disconnected:', socket.id);
     console.log(`Total clients connected: ${io.sockets.sockets.size}`);
   });
