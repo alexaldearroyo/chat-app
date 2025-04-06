@@ -2,9 +2,9 @@
 
 This is a real-time, full-stack chat application built as part of a take-home assignment.
 
----
+![Screenshot](client/public/screenshot1.png)
 
-## 🚀 Tech Stack
+## Tech Stack
 
 ### Frontend
 - **Svelte** (Vite)
@@ -22,7 +22,7 @@ This is a real-time, full-stack chat application built as part of a take-home as
 
 ---
 
-## ✅ Features Implemented
+## eatures Implemented
 
 - Real-time messaging via WebSockets
 - Group creation and joining
@@ -36,23 +36,36 @@ This is a real-time, full-stack chat application built as part of a take-home as
 
 ---
 
-## 📦 How to Run
+## How to Run
 
-### 🖥 Backend
+### 📦 Clone this repo
+
+```bash
+git clone https://github.com/alexaldearroyo/chat-app.git
+cd chat-app
+```
+
+### 🖥 Start the Backend
 
 ```bash
 cd server
 npm install
-npm run dev
+npx tsx index.ts
 ```
+- Backend server will be available at:
+http://localhost:3000
 
-### 🌐 Frontend
+
+
+### 🌐 Start the Frontend
 
 ```bash
 cd client
 npm install
 npm run dev
 ```
+- Frontend will be available at:
+http://localhost:5173
 
 ### 🧪 Run tests
 
@@ -67,12 +80,16 @@ npx vitest run
 cd client
 npx playwright test
 ```
+---
+
+## Requirements
+- Node.js 18+
+- npm
+- Ports 3000 (backend) and 5173 (frontend) must be free
 
 ---
 
-## 🔧 TODOs and Considerations
-
-Due to the time limit, some features were planned but not fully implemented. Clear `TODO` comments are included in the code to indicate:
+## TODOs
 - Group deletion (server/client)
 - Duplicate group/username checks
 - Message history
