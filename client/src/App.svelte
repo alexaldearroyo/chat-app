@@ -73,8 +73,6 @@
     });
 
     getGroups();
-    const interval = setInterval(getGroups, 5000);
-    return () => clearInterval(interval);
   });
 </script>
 

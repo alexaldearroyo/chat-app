@@ -3,19 +3,22 @@ import type { Group } from "./types";
 
 export const socket = io("http://localhost:3000");
 
+// Handle connection
 socket.on("connect", () => {
-  console.log("Connected:", socket.id);
+  // Connection established
 });
 
-// Add debug logs for group events
+// Handle updated group list
 socket.on("groupsList", (groups: Group[]) => {
-  console.log("Received groups list:", groups);
+  // TODO: Use this in a global store or UI component if needed
 });
 
+// Handle connection error
 socket.on("connect_error", (error: Error) => {
-  console.error("Connection error:", error);
+  // TODO: Show user-friendly error message if desired
 });
 
+// Handle disconnect
 socket.on("disconnect", (reason: string) => {
-  console.log("Disconnected:", reason);
+  // TODO: Handle disconnect scenario
 });
