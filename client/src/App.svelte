@@ -39,12 +39,13 @@
 {:else}
   <div>
     <h2>Group: {group}</h2>
-    <div style="border: 1px solid #ccc; padding: 1rem; height: 200px; overflow-y: auto;">
+    <h3>Your Username: {username}</h3>
+    <div class="chat-box">
       {#each messages as msg}
         <p><strong>{msg.username}:</strong> {msg.content}</p>
       {/each}
     </div>
-    <input bind:value={message} placeholder="Your message (max 200 chars)" maxlength="200" />
+    <input bind:value={message} placeholder="Your message" maxlength="200" />
     <button on:click={sendMessage}>Send</button>
   </div>
 {/if}
