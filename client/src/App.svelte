@@ -30,22 +30,27 @@
 </script>
 
 {#if !connected}
-  <div>
-    <h2>Join a group</h2>
+<div class="container">
+  <h2>Join a group</h2>
+  <div class="form-wrapper">
     <input bind:value={username} placeholder="Username" />
     <input bind:value={group} placeholder="Group" />
     <button on:click={joinGroup}>Join</button>
   </div>
+</div>
+
 {:else}
-  <div>
-    <h2>Group: {group}</h2>
-    <h3>Your Username: {username}</h3>
-    <div class="chat-box">
-      {#each messages as msg}
-        <p><strong>{msg.username}:</strong> {msg.content}</p>
-      {/each}
-    </div>
-    <input bind:value={message} placeholder="Your message" maxlength="200" />
-    <button on:click={sendMessage}>Send</button>
+<h2>Group: {group}</h2>
+<div class="chat-wrapper">
+  <h3 class="username-label">Your Username: {username}</h3>
+  <div class="chat-box">
+    {#each messages as msg}
+      <div class="message">
+        <strong>{msg.username}:</strong> {msg.content}
+      </div>
+    {/each}
   </div>
+  <input class="message-input" bind:value={message} placeholder="Your message" maxlength="200" />
+  <button on:click={sendMessage}>Send</button>
+</div>
 {/if}
