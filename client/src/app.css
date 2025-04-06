@@ -256,7 +256,7 @@ button:active {
   top: 100%;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(30, 30, 35, 0.95);
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -295,12 +295,12 @@ button:active {
 
 .group-name {
   font-weight: 500;
-  color: #333;
+  color: #ffffff;
 }
 
 .group-creator {
   font-size: 0.8em;
-  color: #666;
+  color: #cccccc;
   margin-top: 0.2rem;
 }
 
@@ -314,6 +314,14 @@ button:active {
 .join-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.footer {
+  text-align: center;
+  color: #aaa;
+  font-size: 0.85em;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
 }
 
 @keyframes fadeIn {
@@ -366,4 +374,31 @@ button:active {
   .message {
     background: rgba(0, 0, 0, 0.05);
   }
+
+  .select-button {
+    background: rgba(255, 255, 255, 0.8);
+    color: #213547;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .select-button:hover,
+  .select-button.active {
+    background: rgba(240, 240, 255, 0.9);
+    border-color: #646cff;
+  }
+
+  .dropdown-menu {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .group-name {
+    color: #213547;
+  }
+
+  .group-creator {
+    color: #666;
+  }
+
 }

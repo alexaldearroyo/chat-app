@@ -79,5 +79,6 @@
       <div class="section-title">Or create your own</div>
       <button on:click={toggleFormMode} class="primary-btn create-group-btn">Create new group</button>
     {/if}
+    <div class="footer">© 2025 Alex Arroyo</div>
   </div>
 </div>
