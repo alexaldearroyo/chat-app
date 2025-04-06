@@ -5,6 +5,13 @@ export interface JoinPayload {
 
 export interface ChatMessage {
   content: string;
-  timestamp?: number;
-  username?: string;
+  timestamp: number;
+  username: string;
+}
+
+export interface Group {
+  id: string;
+  name: string;
+  createdBy: string;
+  createdAt: number;
 }

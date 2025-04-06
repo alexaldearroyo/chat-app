@@ -11,3 +11,10 @@ export interface ChatMessage {
   timestamp: number;
   username: string;
 }
+
+export interface Group {
+  id: string;
+  name: string;
+  createdBy: string;
+  createdAt: number;
+}

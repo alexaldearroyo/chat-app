@@ -9,8 +9,21 @@ const io = new Server(server, {
   cors: { origin: '*' },
 });
 
+// Log number of connected clients every 5 seconds
+setInterval(() => {
+  const connectedClients = io.sockets.sockets.size;
+  console.log(`Connected clients: ${connectedClients}`);
+}, 5000);
+
 io.on('connection', (socket) => {
   console.log('Client connected:', socket.id);
+  console.log(`Total clients connected: ${io.sockets.sockets.size}`);
+
+  socket.on('disconnect', () => {
+    console.log('Client disconnected:', socket.id);
+    console.log(`Total clients connected: ${io.sockets.sockets.size}`);
+  });
+
   registerChatHandlers(io, socket); // Chat logic here
 });
 
