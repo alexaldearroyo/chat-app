@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { ChatMessage, Group } from './services/types';
-  import { socket } from './services/socket';
+import type { ChatMessage, Group } from '../../shared/types';
+import { socket } from './services/socket';
   import { onMount } from 'svelte';
   import JoinGroupForm from './components/JoinGroupForm.svelte';
   import ChatWindow from './components/ChatWindow.svelte';

@@ -1,19 +1,21 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { registerChatHandlers } from '../sockets/chat';
 import type { Server, Socket } from 'socket.io';
-import type { ChatMessage } from '../types';
+import type { ChatMessage } from '../../shared/types';
 
 const createMockSocket = () => {
   const onMap: Record<string, Function> = {};
 
   const socket: Partial<Socket> = {
     data: {},
+    emit: vi.fn(),
     on: vi.fn((event, handler) => {
       onMap[event] = handler;
       return socket as Socket;
     }),
     join: vi.fn(),
   };
+
 
   return { socket: socket as Socket, onMap };
 };

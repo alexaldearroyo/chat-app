@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { Group } from '../services/types';
-  export let username: string;
+import type { Group } from '../../../shared/types';
+export let username: string;
   export let group: string;
   export let groupName: string;
   export let availableGroups: Group[];

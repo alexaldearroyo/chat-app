@@ -1,5 +1,5 @@
 import io from "socket.io-client";
-import type { Group } from "./types";
+import type { Group } from '../../../shared/types';
 
 export const socket = io("http://localhost:3000");
 
