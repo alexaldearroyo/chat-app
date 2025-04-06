@@ -22,7 +22,7 @@ This is a real-time, full-stack chat application built as part of a take-home as
 
 ---
 
-## eatures Implemented
+## Features
 
 - Real-time messaging via WebSockets
 - Group creation and joining
